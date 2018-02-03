@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+ * WiFiAnalyzer Copyright (C) 2017 VREM Software Development <VREMSoftwareDevelopment@gmail.com>"
+ *
+ * License:WiFi Analyzer is licensed under the GNU General Public License v3.0 (GNU GPLv3)
+ * License Details at "http://www.gnu.org/licenses/gpl-3.0.html"
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ *
+ *
+ * Get Full Source Code"https://github.com/UniDevelopers/WiFi-Analyzer"
+ -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    >
+
+    <include layout="@layout/main_toolbar" />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="65dp"
+
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+
+            android:src="@mipmap/ic_launcher"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/app_name"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:paddingTop="15dp"
+            android:text="Application License:"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:paddingTop="10dp"
+            android:text="Licensed under the GPLv3"/>
+
+        <TextView
+            android:id="@+id/licencelink"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:clickable="true"
+            android:textColor="@color/security"
+            android:text="http://www.gnu.org/licenses/gpl-3.0.html"/>
+
+
+        <TextView
+            android:id="@+id/source_code"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:text="Source Code"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/security" />
+        <TextView
+            android:id="@+id/aknowledge_verm"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp"
+            android:textSize="12sp"
+            android:clickable="true"
+            android:text="This Application is Modified application of WiFiAnalyzer(open-source) Application Which Is Originally developed by VREM Software Development."
+            android:layout_gravity="center_horizontal"
+            />
+        <TextView
+            android:id="@+id/link_verm"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp"
+            android:textSize="14sp"
+            android:clickable="true"
+            android:text="Source Code to WifiAnalyzer(open-source)"
+            android:layout_gravity="center_horizontal"
+             />
+
+        <TextView
+            android:id="@+id/urlverm"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:clickable="true"
+            android:textColor="@color/security"
+            android:text="https://vremsoftwaredevelopment.github.io/WiFiAnalyzer"/>
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

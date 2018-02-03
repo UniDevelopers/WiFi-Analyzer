@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+ * WiFiAnalyzer Copyright (C) 2017 VREM Software Development <VREMSoftwareDevelopment@gmail.com>"
+ *
+ * License:WiFi Analyzer is licensed under the GNU General Public License v3.0 (GNU GPLv3)
+ * License Details at "http://www.gnu.org/licenses/gpl-3.0.html"
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ *
+ *
+ * Get Full Source Code"https://github.com/UniDevelopers/WiFi-Analyzer"
+ -->
+<resources>
+    <!-- blue_500 -->
+
+    <color name="connected">#2196F3</color>
+    <color name="connected_background">#E0E0E0</color>
+    <color name="navigation_header">#69a727</color>
+
+    <!-- grey_500 -->
+    <color name="channel">#9E9E9E</color>
+
+
+    <!-- cyan_500 -->
+    <color name="channel_number">#00BCD4</color>
+    <!-- blue_grey_500 -->
+    <color name="security">#52bbed</color>
+    <!-- teal_500 -->
+    <color name="distance">#009688</color>
+
+    <!-- grey_500 -->
+    <color name="icons_color">#6881ef</color>
+    <!-- red_500 -->
+    <color name="error_color">#F44336</color>
+    <!-- amber_500 -->
+    <color name="warning_color">#FFC107</color>
+    <!-- green_500 -->
+    <color name="success_color">#4CAF50</color>
+    <color name="colorPrimaryDark_light">#57901b</color>
+    <color name="colorPrimary_light">#3F51B5</color>
+    <color name="colorPrimaryDark_dark">#57901b</color>
+    <color name="colorPrimary">#69a727</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="foreground_material_dark">#eeeeee</color>
+    <color name="background_material_light_1">#eeeeee</color>
+    <color name="background_material_light_2">#eeeeee</color>
+    <color name="foreground_material_light">#eeeeee</color>
+
+
+</resources>

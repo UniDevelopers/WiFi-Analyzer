@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "506955217795",
+    "firebase_url": "https://wifi-analyzer-809d7.firebaseio.com",
+    "project_id": "wifi-analyzer-809d7",
+    "storage_bucket": "wifi-analyzer-809d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506955217795:android:ed87c26311127a33",
+        "android_client_info": {
+          "package_name": "com.uni.wifianalyzer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506955217795-bo43slj4jjb66jumdbtvk0kuru6uvqc7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDW59d26p4s25aOB6RjCNsl_RUCrK4NhOU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
