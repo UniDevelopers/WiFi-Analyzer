@@ -52,6 +52,10 @@ import com.facebook.ads.AdError;
 import com.facebook.ads.AdSettings;
 import com.facebook.ads.InterstitialAd;
 import com.facebook.ads.InterstitialAdListener;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
 import com.uni.wifianalyzer.navigation.NavigationMenu;
 import com.uni.wifianalyzer.navigation.NavigationMenuView;
 import com.uni.wifianalyzer.settings.Settings;
@@ -69,15 +73,16 @@ import static android.support.design.widget.NavigationView.OnNavigationItemSelec
 public class MainActivity extends AppCompatActivity implements OnSharedPreferenceChangeListener, OnNavigationItemSelectedListener {
 
 
-    private static final String KEEP_VAR = "pref_keep_on";
-    public static final String DISABLE_ADS = "pref_disable_ads_key";
-    public static boolean AdsEnable;
+    //private static final String KEEP_VAR = "pref_keep_on";
+   // public static final String DISABLE_ADS = "pref_disable_ads_key";
+    //public static boolean AdsEnable;
     private ThemeStyle currentThemeStyle;
     private NavigationMenuView navigationMenuView;
     private NavigationMenu startNavigationMenu;
     private String currentCountryCode;
     private ConnectionView connectionView;
     private InterstitialAd interstitialAd;
+       private com.google.android.gms.ads.InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,11 +112,7 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        loadKeepScreen();
-        if (AdsEnable) {
-
-            showIneterstial();
-        }
+   
 
 
         startNavigationMenu = settings.getStartMenu();
@@ -142,6 +143,20 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 
 
         });
+          
+              if (NetworkConnectivity.isConnected(getApplicationContext())) {
+            //CheckPurchase.checkpurchases(getApplicationContext());
+            //facebookBannerAd();
+            CheckPurchase.checkpurchases(getApplicationContext());
+            if (!getApplicationContext().getSharedPreferences("Premium", Context.MODE_PRIVATE).getBoolean("IsPremium", true)) {
+                //MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
+                // showIneterstial();
+                showIneterstial();
+
+            }
+            //firebaseRemoteConfigue();
+        }
+          
 
 
         //if(getResources().getBoolean(R.bool.isTab)) {
@@ -201,8 +216,27 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
             public void onError(Ad ad, AdError adError) {
                 // Ad error callback
                 // Toast.makeText(MainActivity.this, "Error: " + adError.getErrorMessage(),
-                //        Toast.LENGTH_LONG).show();
+            
+                           mInterstitialAd = new com.google.android.gms.ads.InterstitialAd(MainActivity.this);
+
+                mInterstitialAd.setAdUnitId("ca-app-pub-9192948434013012/0000000000");
+
+
+                AdRequest adRequest = new AdRequest.Builder().build();
+
+                mInterstitialAd.loadAd(adRequest);
+
+                mInterstitialAd.setAdListener(new AdListener() {
+                    public void onAdLoaded() {
+
+                    }
+                });
+                // Ad error callback
+                // Toast.makeText(MainActivity.this, "Error: " + adError.getErrorMessage(),
+                //        Toast.LENGTH_LONG).show();//        Toast.LENGTH_LONG).show();
             }
+              
+              
 
             @Override
             public void onAdLoaded(Ad ad) {
@@ -305,12 +339,21 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
         } else {
             if (startNavigationMenu.equals(navigationMenuView.getCurrentNavigationMenu())) {
                 super.onBackPressed();
-            } else if (AdsEnable&& interstitialAd != null) {
+            } else if (interstitialAd!=null&&interstitialAd.isAdLoaded()) {
                 showInterstitial();
+                navigationMenuView.setCurrentNavigationMenu(startNavigationMenu);
+                onNavigationItemSelected(navigationMenuView.getCurrentMenuItem());
+            } else if (
+                    mInterstitialAd!=null&&mInterstitialAd.isLoaded())
+            {
+                mInterstitialAd.show();
+
 
                 navigationMenuView.setCurrentNavigationMenu(startNavigationMenu);
                 onNavigationItemSelected(navigationMenuView.getCurrentMenuItem());
-            } else {
+            }
+              
+              else {
                 navigationMenuView.setCurrentNavigationMenu(startNavigationMenu);
                 onNavigationItemSelected(navigationMenuView.getCurrentMenuItem());
 
@@ -434,7 +477,7 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 
     }
 
-    private void loadKeepScreen() {
+  /*  private void loadKeepScreen() {
         if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean(KEEP_VAR, false)) {
             //getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
@@ -448,6 +491,6 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
             //        Toast.LENGTH_LONG).show();
             // getWindow().clearFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
-    }
+    }*/
 }
 
