@@ -43,6 +43,7 @@ public enum NavigationMenu {
     TIME_GRAPH(R.drawable.ic_show_chart_grey_500_48dp, R.string.action_time_graph, true, new FragmentItem(new TimeGraphFragment())),
     CHANNEL_AVAILABLE(R.drawable.ic_location_on_grey_500_48dp, R.string.action_channel_available, new FragmentItem( new ChannelAvailableFragment())),
     VENDOR_LIST(R.drawable.ic_list_grey_500_48dp, R.string.action_vendors, new FragmentItem(new VendorFragment())),
+    REMOVE_ADS(R.drawable.ic_crown,R.string.remove_ads,new ActivityItem(RemoveAds.class)),
     SETTINGS(R.drawable.ic_settings_grey_500_48dp, R.string.action_settings, new ActivityItem(SettingActivity.class)),
     Advertize(R.drawable.ic_info_black_24dp, R.string.action_about, new ActivityItem(AboutActivity.class));
     //SETTINGSS(R.drawable.ic_settings_grey_500_48dp, R.string.action_settings, AboutActivity.class), ;
