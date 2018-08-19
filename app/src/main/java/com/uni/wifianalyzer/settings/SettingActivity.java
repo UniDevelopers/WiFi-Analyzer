@@ -36,7 +36,7 @@ import com.uni.wifianalyzer.R;
 
 public class SettingActivity extends PreferenceActivity {
 
-    private static final String KEEP_VAR = "pref_keep_on";
+   // private static final String KEEP_VAR = "pref_keep_on";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Settings settings = MainContext.INSTANCE.getSettings();
@@ -46,7 +46,7 @@ public class SettingActivity extends PreferenceActivity {
         super.onCreate(savedInstanceState);
 
         getFragmentManager().beginTransaction().replace(android.R.id.content, new SettingPreferenceFragment()).commit();
-        loadKeepScreen();
+        //loadKeepScreen();
         ActionBar actionBar = getActionBar();
 
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#69a727"));
@@ -57,7 +57,7 @@ public class SettingActivity extends PreferenceActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
     }
-    private void loadKeepScreen() {
+  /*  private void loadKeepScreen() {
         if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean(KEEP_VAR, false)) {
             // getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
@@ -67,7 +67,7 @@ public class SettingActivity extends PreferenceActivity {
             //  getWindow().clearFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
 
-    }
+    }*/
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
