@@ -51,7 +51,7 @@ Link to WiFiAnalyzer(open-source) Application "https://play.google.com/store/app
       * In Welcome to Android Studio Screen select Import project ...
       * Select the root directory of the WiFi Analyzer repository and click "OK".
       * WiFi Analyzer will build automatically
-      * If aAndroid studio Version is more than 3.1  Then, In android studio 
+      * If Android studio Version is more than 3.1  Then, In android studio 
          Go to --> Files-->Sync Project With Gradle files.
       * Do Not add Any extra file From git While Imoporting project
       
