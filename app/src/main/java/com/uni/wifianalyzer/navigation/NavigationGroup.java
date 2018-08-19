@@ -26,7 +26,7 @@ import android.support.annotation.NonNull;
 public enum NavigationGroup {
     GROUP_FEATURE(NavigationMenu.ACCESS_POINTS, NavigationMenu.CHANNEL_RATING, NavigationMenu.CHANNEL_GRAPH, NavigationMenu.TIME_GRAPH),
     GROUP_OTHER(NavigationMenu.CHANNEL_AVAILABLE, NavigationMenu.VENDOR_LIST),
-    GROUP_SETTINGS(NavigationMenu.SETTINGS, NavigationMenu.Advertize);
+    GROUP_SETTINGS(NavigationMenu.REMOVE_ADS,NavigationMenu.SETTINGS, NavigationMenu.Advertize);
 
     private final NavigationMenu[] navigationMenu;
 
