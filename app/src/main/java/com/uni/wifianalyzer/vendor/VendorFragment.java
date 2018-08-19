@@ -54,7 +54,7 @@ import com.uni.wifianalyzer.vendor.model.VendorService;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.uni.wifianalyzer.MainActivity.AdsEnable;
+
 
 public class VendorFragment extends ListFragment {
     private VendorAdapter vendorAdapter;
