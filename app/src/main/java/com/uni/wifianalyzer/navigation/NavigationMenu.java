@@ -27,6 +27,7 @@ import android.view.MenuItem;
 import com.uni.wifianalyzer.MainActivity;
 import com.uni.wifianalyzer.R;
 import com.uni.wifianalyzer.about.AboutActivity;
+import com.uni.wifianalyzer.RemoveAds;
 
 import com.uni.wifianalyzer.settings.SettingActivity;
 import com.uni.wifianalyzer.vendor.VendorFragment;
