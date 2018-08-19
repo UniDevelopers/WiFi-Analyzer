@@ -50,6 +50,19 @@
                 android:orientation="vertical"
                 android:layout_alignParentTop="true"
                 >
+                <com.google.android.gms.ads.AdView
+
+                    xmlns:ads="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/adViewbanner"
+                     android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentTop="true"
+                    ads:adSize="MEDIUM_RECTANGLE"
+                    ads:adUnitId="ca-app-pub-9192948434013012/0000000">
+                </com.google.android.gms.ads.AdView>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
