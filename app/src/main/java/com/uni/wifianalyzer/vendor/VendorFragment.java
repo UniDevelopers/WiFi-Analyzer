@@ -44,7 +44,11 @@ import com.facebook.ads.NativeAd;
 import com.uni.wifianalyzer.MainContext;
 import com.uni.wifianalyzer.R;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.uni.wifianalyzer.CheckPurchase;
 
+import com.uni.wifianalyzer.NetworkConnectivity;
 import com.uni.wifianalyzer.vendor.model.VendorService;
 
 import java.util.ArrayList;
@@ -60,6 +64,7 @@ public class VendorFragment extends ListFragment {
     private LinearLayout nativeAdContainer;
     private LinearLayout adView;
     public Context pkkv;
+     public com.google.android.gms.ads.AdView Gads;
 
     @Nullable
     @Override
@@ -71,6 +76,8 @@ public class VendorFragment extends ListFragment {
 
         nativeAdContainer = (LinearLayout) view.findViewById(R.id.native_ad_container);
 
+           Gads = (AdView) view.findViewById(R.id.adViewbanner);
+        Gads.setVisibility(View.GONE);
         pkkv = getActivity();
 
         return view;
@@ -82,12 +89,18 @@ public class VendorFragment extends ListFragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        if (AdsEnable) {
-
-
-            showNativeAd();
-
+        if (NetworkConnectivity.isConnected(getActivity().getApplicationContext())) {
+           
+            CheckPurchase.checkpurchases(getActivity().getApplicationContext());
+            if (!getActivity().getApplicationContext().getSharedPreferences("Premium", Context.MODE_PRIVATE).getBoolean("IsPremium", true)) {
+               
+                showNativeAd();
+            }
+          
         }
+
+            
+        
 
     }
 
@@ -97,6 +110,17 @@ public class VendorFragment extends ListFragment {
 
             @Override
             public void onError(Ad ad, AdError error) {
+                
+                  Gads.setVisibility(View.VISIBLE);
+
+
+
+                Gads.setAdListener(newAdlistner);
+                Gads.loadAd(new AdRequest.Builder()
+
+
+
+                        .build());
                 // Ad error callback
             }
 
@@ -174,9 +198,45 @@ public class VendorFragment extends ListFragment {
         if (nativeAd != null) {
             nativeAd.destroy();
         }
+         if (Gads!=null){
+            Gads.destroy();
+        }
 
         super.onDestroy();
     }
+      com.google.android.gms.ads.AdListener newAdlistner = (new  com.google.android.gms.ads.AdListener(){
+
+        @Override
+        public void onAdLoaded() {
+           // spinner.setVisibility(View.GONE);
+        }
+
+        @Override
+        public void onAdFailedToLoad(int errorCode) {
+            // Code to be executed when an ad request fails.
+           // Gads.setVisibility(View.GONE);
+
+           // textnoads.setVisibility(View.VISIBLE);
+           // spinner.setVisibility(View.GONE);
+        }
+
+        @Override
+        public void onAdOpened() {
+            // Code to be executed when an ad opens an overlay that
+            // covers the screen.
+        }
+
+        @Override
+        public void onAdLeftApplication() {
+            // Code to be executed when the user has left the app.
+        }
+
+        @Override
+        public void onAdClosed() {
+            // Code to be executed when when the user is about to return
+            // to the app after tapping on an ad.
+        }
+    });
 
     @Override
     public void onResume() {
