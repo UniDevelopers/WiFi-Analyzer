@@ -148,6 +148,7 @@
     <string name="rta_dialog_ok">Rate now</string>
     <string name="rta_dialog_cancel">Later</string>
     <string name="rta_dialog_no">No, thanks</string>
-
+<string name="title_activity_remove_ads">Remove Ads</string>
+    <string name="restart_app">Please Restart Application Inorder to Apply Changes</string>
 
 </resources>
