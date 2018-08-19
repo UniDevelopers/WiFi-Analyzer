@@ -24,10 +24,7 @@
     <PreferenceCategory
         android:key="interfaceCategory"
         android:title="@string/interface_preferences">
-        <CheckBoxPreference
-            android:key="pref_keep_on"
-            android:summary="@string/disable_ads_sub"
-            android:title="@string/disable_ads" />
+       
         <ListPreference
             android:defaultValue="@string/wifi_band_default"
             android:entries="@array/wifi_band_array"
