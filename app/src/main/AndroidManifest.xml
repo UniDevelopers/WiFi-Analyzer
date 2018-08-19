@@ -29,6 +29,7 @@
         <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
         <uses-permission android:name="android.permission.INTERNET" />
         <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+   <uses-permission android:name="com.android.vending.BILLING" />
 
 
         <application
@@ -73,6 +74,16 @@
                     android:value="com.uni.wifianalyzer.MainActivity" />
 
             </activity>
+          <activity
+            android:name=".RemoveAds"
+            android:label="@string/title_activity_remove_ads"
+            android:launchMode="singleTask"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni.wifianalyzer.MainActivity" />
+        </activity>
         </application>
 
     </manifest>
